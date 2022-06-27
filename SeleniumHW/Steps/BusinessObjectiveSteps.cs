@@ -19,11 +19,11 @@ namespace Framework_Marina.Features
             logInPage.ClickLoginButton();
 
             EmailPage emailPage = new EmailPage(driver, wait, customWait);
-            emailPage.WriteEmail("automation.pp@amdaris.com");
+            emailPage.WriteEmail("marina.grati@amdaris.com");
             emailPage.PressNextButton();
 
             PasswordPage passwordPage = new PasswordPage(driver, wait, customWait);
-            passwordPage.WritePassword("10704-observe-MODERN-products-STRAIGHT-69112");
+            passwordPage.WritePassword("Test12341!");
             passwordPage.PressSignInButton();
 
             SignInPage signIn = new SignInPage(driver, wait);
