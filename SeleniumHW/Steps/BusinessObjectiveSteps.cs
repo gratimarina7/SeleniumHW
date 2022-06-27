@@ -59,10 +59,9 @@ namespace Framework_Marina.Features
         {
             AddNewBusinessObjective addNewBusinessObjective = new AddNewBusinessObjective(driver, wait);
             addNewBusinessObjective.WhriteBusinessObjective("One business objective");
+            log.Info("Write business obective name!");
             addNewBusinessObjective.WhriteBusinessObjectiveOutput("One business objective output");
-
-            log.Info("Whrite business obective name!");
-            log.Info("Whrite business objective name and output!");
+            log.Info("Write business objective name and output!");
         }
 
         [When(@"I choose the following data into the new Business Objective form:")]
@@ -70,19 +69,18 @@ namespace Framework_Marina.Features
         {
             AddNewBusinessObjective addNewBusinessObjective = new AddNewBusinessObjective(driver, wait);
             addNewBusinessObjective.ClickStatusField();
-            addNewBusinessObjective.SelectStatusInput();
-            addNewBusinessObjective.ClickPriorityInput();
-            addNewBusinessObjective.SelectPriorityInput();
-            addNewBusinessObjective.ClickOnCalendar();
-            addNewBusinessObjective.SelectDeadlineMonth();
-            addNewBusinessObjective.SelectDeadlineDate();
-
             log.Info("Clicked status field!");
+            addNewBusinessObjective.SelectStatusInput();
             log.Info("Selected status!");
+            addNewBusinessObjective.ClickPriorityInput();
             log.Info("Clicked priority field!");
+            addNewBusinessObjective.SelectPriorityInput();
             log.Info("Selected priority!");
+            addNewBusinessObjective.ClickOnCalendar();
             log.Info("Click on calendar!");
+            addNewBusinessObjective.SelectDeadlineMonth();
             log.Info("Select Deadline Month!");
+            addNewBusinessObjective.SelectDeadlineDate();
             log.Info("Select DeadLine Date!");
         }
        
@@ -91,7 +89,6 @@ namespace Framework_Marina.Features
         {
             AddNewBusinessObjective addNewBusinessObjective = new AddNewBusinessObjective(driver, wait);
             addNewBusinessObjective.SaveNewBusinessObjective();
-
             log.Info("Clicked submit button!");
         }
 
@@ -100,7 +97,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage messageNewBusinessObjectives = new BusinessObjectivesPage(driver, wait);
             messageNewBusinessObjectives.MessageBusinessObjectiveSave();
-
             log.Info("Pop Up Business Objective added successfully displayed!");
         }
 
@@ -109,7 +105,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage addNewBusinessObjectives = new BusinessObjectivesPage(driver, wait);
             addNewBusinessObjectives.ClickAddBusinessObjective();
-
             log.Info("Clicked on Add New Business Objective!");
         }
 
@@ -118,29 +113,27 @@ namespace Framework_Marina.Features
         {
             CancelAddNewBusinessObjective cancelAddNewBusinessObjective = new CancelAddNewBusinessObjective(driver, wait);
             cancelAddNewBusinessObjective.WhriteBusinessObjective("Second business objective");
+            log.Info("Write business obective name!");
             cancelAddNewBusinessObjective.WhriteBusinessObjectiveOutput("Second business objective output");
-
-            log.Info("Whrite business obective name!");
-            log.Info("Whrite business objective name and output!");
+            log.Info("Write business objective name and output!");
         }
         [When(@"I choose the following data into the Business Objective form:")]
         public void WhenIChoseTheFollowingDataIntoTheBusinessObjectiveForm(Table table)
         {
             CancelAddNewBusinessObjective cancelAddNewBusinessObjective = new CancelAddNewBusinessObjective(driver, wait);
             cancelAddNewBusinessObjective.ClickStatusField();
-            cancelAddNewBusinessObjective.SelectStatusInput();
-            cancelAddNewBusinessObjective.ClickPriorityInput();
-            cancelAddNewBusinessObjective.SelectPriorityInput();
-            cancelAddNewBusinessObjective.ClickOnCalendar();
-            cancelAddNewBusinessObjective.SelectDeadlineMonth();
-            cancelAddNewBusinessObjective.SelectDeadlineDate();
-
             log.Info("Click status field!");
+            cancelAddNewBusinessObjective.SelectStatusInput();
             log.Info("Select status!");
+            cancelAddNewBusinessObjective.ClickPriorityInput();
             log.Info("Click priority field!");
+            cancelAddNewBusinessObjective.SelectPriorityInput();
             log.Info("Select priority!");
+            cancelAddNewBusinessObjective.ClickOnCalendar();
             log.Info("Click on calendar!");
+            cancelAddNewBusinessObjective.SelectDeadlineMonth();
             log.Info("Select Deadline Month!");
+            cancelAddNewBusinessObjective.SelectDeadlineDate();
             log.Info("Select DeadLine Date!");   
         }
         [Then(@"I clicked Cancel button the new business objective was not saved")]
@@ -148,7 +141,6 @@ namespace Framework_Marina.Features
         {
             CancelAddNewBusinessObjective cancelAddNewBusinessObjective = new CancelAddNewBusinessObjective(driver, wait);
             cancelAddNewBusinessObjective.CancelToSaveNewBusinessObjective();
-
             log.Info("Clicked cancel button!");
         }
 
@@ -157,17 +149,15 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickOnSearchInputField("One business objective");
-     
             log.Info("Clicked on Search!");
         }
 
         [When(@"I have entered One business objective as search keyword")]
         public void IHaveEnteredOneBusinessObjectiveAsSearchKeyword()
         {
-            BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
+           BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
            businessObjectivePage.WriteInSearchInputField("One business objective");
-
-          log.Info("Write One Business Objective!");
+           log.Info("Write One Business Objective!");
         }
 
         [When(@"I click the search button")]
@@ -175,7 +165,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickOnSearchButton();
-
             log.Info("Clicked on Search button!");
         }
 
@@ -184,7 +173,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickOnSearchButton();
-
             log.Info("Clicked on search button!");
         }
         [When(@"I delete status filter")]
@@ -192,7 +180,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickDeleteStatusFilter();
-
             log.Info("Delete status filter!");
         }
         [When(@"I clicked on Edit Business Objective button")]
@@ -200,7 +187,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickEditBusinessObjective();
-            
             log.Info("Click on edit business objectives button!");
         }
         
@@ -209,29 +195,27 @@ namespace Framework_Marina.Features
         {
             EditBusinessObjective editBusinessObjective = new EditBusinessObjective(driver, wait);
             editBusinessObjective.EditBusinessObjectives("Edit the first business objective");
+            log.Info("Edit business objectives!");
             editBusinessObjective.EditBusinessObjectiveOutput("Edit the first business objective output");
-           
-             log.Info("Edit first business objectives!");
-             log.Info("Edit first business objectives output!");
+            log.Info("Edit business objectives output!");
         }
         [When(@"I choose the following data into the edited Business Objective form:")]
         public void WhenIChooseTheFollowingDataIntoTheEditedBusinessObjectiveForm(Table table)
         {
             EditBusinessObjective editBusinessObjective = new EditBusinessObjective(driver, wait);
             editBusinessObjective.ClickStatusInput();
-            editBusinessObjective.SelectStatusInput();
-            editBusinessObjective.ClickPriorityInput();
-            editBusinessObjective.SelectPriorityInput();
-            editBusinessObjective.ClickOnCalendar();
-            editBusinessObjective.SelectDeadlineMonth();
-            editBusinessObjective.SelectDeadlineDate();
-
             log.Info("Click status field!");
+            editBusinessObjective.SelectStatusInput();
             log.Info("Select status!");
+            editBusinessObjective.ClickPriorityInput();
             log.Info("Click priority field!");
+            editBusinessObjective.SelectPriorityInput();
             log.Info("Select priority!");
+            editBusinessObjective.ClickOnCalendar();
             log.Info("Click on calendar!");
+            editBusinessObjective.SelectDeadlineMonth();
             log.Info("Select Deadline Month!");
+            editBusinessObjective.SelectDeadlineDate();
             log.Info("Select DeadLine Date!");
         }
         [When(@"I clicked Save button")]
@@ -239,7 +223,6 @@ namespace Framework_Marina.Features
         {
             EditBusinessObjective editBusinessObjective = new EditBusinessObjective(driver, wait);
             editBusinessObjective.SaveEditedBusinessObjective();
-
             log.Info("Clicked save button!");
         }
         [Then(@"A pop up message Business Objective updated successfully is displayed")]
@@ -247,7 +230,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage messageUpdatedEditedBusinessObjectives = new BusinessObjectivesPage(driver, wait);
             messageUpdatedEditedBusinessObjectives.MessageBusinessObjectiveEditedSave();
-
             log.Info("Pop Up Business Objective updated successfully is displayed!");
         }
         [When(@"I clicked Edit Business Objective")]
@@ -255,7 +237,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickEditBusinessObjective();
-
             log.Info("Click edit business objectives");
         }
 
@@ -264,9 +245,8 @@ namespace Framework_Marina.Features
         {
             EditBusinessObjective editBusinessObjective = new EditBusinessObjective(driver, wait);
             editBusinessObjective.EditBusinessObjectives("Make some changes into business objective");
-            editBusinessObjective.EditBusinessObjectiveOutput("Make some changes into business objective output");
-
             log.Info("Edit business objectives!");
+            editBusinessObjective.EditBusinessObjectiveOutput("Make some changes into business objective output");
             log.Info("Edit business objectives output!");
         }
         [When(@"I choose the following data into Edited Business Objective form:")]
@@ -274,19 +254,18 @@ namespace Framework_Marina.Features
         {
             EditBusinessObjective editBusinessObjective = new EditBusinessObjective(driver, wait);
             editBusinessObjective.ClickStatusInput();
-            editBusinessObjective.SelectStatusInput2();
-            editBusinessObjective.ClickPriorityInput();
-            editBusinessObjective.SelectPriorityInput2();
-            editBusinessObjective.ClickOnCalendar();
-            editBusinessObjective.SelectDeadlineMonth();
-            editBusinessObjective.SelectDeadlineDate2();
-
             log.Info("Click status input!");
+            editBusinessObjective.SelectStatusInput2();
             log.Info("Select status input 2!");
+            editBusinessObjective.ClickPriorityInput();
             log.Info("Click priority input!");
+            editBusinessObjective.SelectPriorityInput2();
             log.Info("Select priority input 2!");
+            editBusinessObjective.ClickOnCalendar();
             log.Info("Click on calendar!");
+            editBusinessObjective.SelectDeadlineMonth();
             log.Info("Select Deadline Month!");
+            editBusinessObjective.SelectDeadlineDate2();
             log.Info("Select DeadLine Date 2!");
         }
         [Then(@"I clicked Cancel the edited business objective was not saved")]
@@ -294,7 +273,6 @@ namespace Framework_Marina.Features
         {
             EditBusinessObjective editBusinessObjective = new EditBusinessObjective(driver, wait);
             editBusinessObjective.CancelEditedBusinessObjective();
-
             log.Info("Clicked cancel button!");
         }
         [When(@"I clicked on Delete Business Objective")]
@@ -302,7 +280,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickDeleteBusinessObjectiveButton();
-
             log.Info("Click delete business objective button!");
         }
         [Then(@"I clicked No button from the Confirmation modal box and the business objective was not deleted")]
@@ -310,7 +287,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickCancelDeleteBusinessObjectiveButton();
-
             log.Info("Click cancel to delete business obectives!");
         }
         [When(@"I clicked on Delete Business Objective button")]
@@ -318,7 +294,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickDeleteBusinessObjectiveButton();
-
             log.Info("Click Delete button!");
         }
         [When(@"I clicked Yes from the Confirmation modal box")]
@@ -326,7 +301,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickConfirmationToDeleteBusinessObjectiveButton();
-
             log.Info("Click confirmation to delete!");
         }
         [Then(@"A pop up message Business Objective deleted successfully is displayed and business objective was deleted")]
@@ -334,7 +308,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.MessageBusinessObjectiveDeleted();
-
             log.Info("Pop Up Business Objective deleted successfully is displayed!!");
         }
         [When(@"I clicked on delete button of status filter")]
@@ -342,7 +315,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ClickDeleteStatusFilter();
-
             log.Info("Click delete status filter!");
         }
         [When(@"I click to expand Filter status field")]
@@ -350,7 +322,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.ExpandStatusFilterPositions();
-
             log.Info("Expand status filter position!");
         }
         [When(@"I select Achieved field")]
@@ -358,7 +329,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.SelectStatusFilterPosition();
-
             log.Info("Select status filter position");
         }
         [Then(@"I should see all business objectives with Achieved status")]
@@ -366,7 +336,6 @@ namespace Framework_Marina.Features
         {
             BusinessObjectivesPage businessObjectivePage = new BusinessObjectivesPage(driver, wait);
             businessObjectivePage.SelectStatusFilterPosition();
-
             log.Info("View all selected status filter positions!");
         }
     }
